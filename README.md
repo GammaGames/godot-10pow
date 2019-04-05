@@ -7,7 +7,8 @@
 * 100 (10<sup>2</sup>) loc/script
 * 1000 (10<sup>3</sup>) KB max
 
-The rules are pretty simple:
+## Rules
+
 * One main scene allowed
 * The one scene can consist of 10 nodes max
   * Autoload nodes count as a single node
@@ -18,6 +19,9 @@ The rules are pretty simple:
 * The total project size can be 1MB no larger in size
   * This allows users to include textures, sounds, 3D models, etc
 
-The rules may change, we are still determining the legality of if the following:
+Since this is a new project the rules are subject to modifications. We are still determining the legality of if the following:
   * Creating new child nodes at runtime
+    * Would lets users use the code size limit more to its extent
+    * Would allow more freedom in tree structure
   * How addons should work in the constraints
+    * You could probably make a complex game with an addon (for example, VR)
