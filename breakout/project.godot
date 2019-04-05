@@ -20,7 +20,7 @@ _global_script_class_icons={
 
 [application]
 
-config/name="Breakout 10-100-1000"
+config/name="Breakout 10pow"
 run/main_scene="res://Main.tscn"
 config/icon="res://icon.png"
 

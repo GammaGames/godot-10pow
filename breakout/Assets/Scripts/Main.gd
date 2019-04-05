@@ -3,6 +3,8 @@ extends Node2D
 func _ready():
     randomize()
     var map = []
+    # Cellular Automata algorithm from
+    # https://gamedevelopment.tutsplus.com/tutorials/generate-random-cave-levels-using-cellular-automata--gamedev-9664
     # Create empty map
     for y in range(13):
         var row = []
