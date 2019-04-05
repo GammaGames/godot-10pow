@@ -16,7 +16,7 @@
 * Each node may have a script, but each script can have no more than 100 lines
   * This includes comments and whitespace
   * The length is to encourage documentation
-* The total project size can be 1MB no larger in size
+* The total project size can be no larger than 1MB in size
   * This allows users to include textures, sounds, 3D models, etc
 
 Since this is a new project the rules are subject to modifications. We are still determining the legality of if the following:
