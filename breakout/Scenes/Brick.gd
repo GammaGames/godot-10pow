@@ -17,5 +17,7 @@ func _ready():
 
 func break():
     if breakable:
+        remove_from_group("brick")
+        if not get_tree().get_nodes_in_group("brick").size():
+            get_tree().reload_current_scene()
         queue_free()
-        emit_signal("broken")
