@@ -2,7 +2,6 @@
 
 [ext_resource path="res://Scenes/Main.gd" type="Script" id=1]
 
-[node name="Main" type="VisibilityNotifier2D"]
-rect = Rect2( 0, 0, 320, 512 )
+[node name="Main" type="Node2D"]
 script = ExtResource( 1 )
 
