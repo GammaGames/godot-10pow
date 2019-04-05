@@ -2,23 +2,18 @@ extends Node2D
 
 func _ready():
     randomize()
-    var paddle = load("res://Scenes/Paddle.tscn").instance()
-    paddle.global_position = Vector2(160, 496)
-    add_child(paddle)
-    var ball = load("res://Scenes/Ball.tscn").instance()
-    ball.global_position = Vector2(160, 470)
-    add_child(ball)
-
     var map = []
-    for y in range(13): # Fill map
+    # Create empty map
+    for y in range(13):
         var row = []
         row.resize(9)
         for x in range(row.size()):
-            row[x] = '#' if randf() > 0.6 else ' '
+            row[x] = '#' if rand_range(13 - y, 13) > 13 * 0.6 else ' '
         map.append(row)
 
+    # Iterate and validate map
     var valid = false
-    while !valid: # Iterate and validate map
+    while !valid:
         for i in 4:
             iterate(map, true)
         for i in 3:
@@ -26,7 +21,8 @@ func _ready():
         var m = flood_map(map)
         valid = check_map(m, '.', 0.2, 0.6)
 
-    for y in range(-1, map.size() + 3): # Create map walls
+    # Create map walls
+    for y in range(-1, map.size() + 3):
         instance_brick(-1, y, false)
         instance_brick(map[0].size(), y, false)
     for x in range(map[0].size()):
@@ -38,11 +34,10 @@ func _ready():
                 instance_brick(x, y, map[y][x] == '#')
 
 func instance_brick(x, y, breakable=false):
-    var brick_instance = load("res://Scenes/Brick.tscn").instance()
+    var brick_instance = $Brick.duplicate()
     brick_instance.breakable = breakable
     add_child(brick_instance)
     brick_instance.global_position = Vector2(x * 32 + 32, y * 32 + 32)
-
 
 func iterate(map, empty=false):
     var m = clone_map(map)
@@ -79,6 +74,7 @@ func flood_map(map):
     return m
 
 func flood(map, x, y):
+    # Recursive function for flooding map
     map[y][x] = '.'
     if x - 1 >= 0 and map[y][x - 1] == ' ':
         flood(map, x - 1, y)
@@ -90,6 +86,7 @@ func flood(map, x, y):
         flood(map, x, y + 1)
 
 func check_map(map, ch, mi, ma):
+    # Check if percent of map is full
     var count = 0
     for row in map:
         for c in row:

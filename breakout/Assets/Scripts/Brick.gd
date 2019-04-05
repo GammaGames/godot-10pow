@@ -8,6 +8,7 @@ onready var sprite = $Sprite
 export var breakable : bool = true
 
 func _ready():
+    # TODO randomize brick texture
     if breakable:
         add_to_group("brick")
         sprite.texture = load("res://Assets/Sprites/brick.png")

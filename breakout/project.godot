@@ -12,7 +12,7 @@ _global_script_classes=[ {
 "base": "StaticBody2D",
 "class": "Brick",
 "language": "GDScript",
-"path": "res://Scenes/Brick.gd"
+"path": "res://Assets/Scripts/Brick.gd"
 } ]
 _global_script_class_icons={
 "Brick": ""
@@ -20,8 +20,8 @@ _global_script_class_icons={
 
 [application]
 
-config/name="Breakout"
-run/main_scene="res://Scenes/Main.tscn"
+config/name="Breakout 10-100-1000"
+run/main_scene="res://Main.tscn"
 config/icon="res://icon.png"
 
 [display]
@@ -76,4 +76,5 @@ ui_restart={
 
 [rendering]
 
+environment/default_clear_color=Color( 0.278431, 0.278431, 0.278431, 1 )
 environment/default_environment="res://default_env.tres"
