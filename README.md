@@ -1,6 +1,6 @@
 # godot-10pow
 
-<sup>Challenge idea from [/u/thismarty](https://www.reddit.com/r/godot/comments/b90if7/a_godot_10liners_contest/ek2u8n7?utm_source=share&utm_medium=web2x) and [/u/MrMaidx](https://www.reddit.com/r/godot/comments/b90if7/a_godot_10liners_contest/ek3f9sf?utm_source=share&utm_medium=web2x)</sup>
+<sub>Challenge idea from [/u/thismarty](https://www.reddit.com/r/godot/comments/b90if7/a_godot_10liners_contest/ek2u8n7?utm_source=share&utm_medium=web2x) and [/u/MrMaidx](https://www.reddit.com/r/godot/comments/b90if7/a_godot_10liners_contest/ek3f9sf?utm_source=share&utm_medium=web2x)</sub>
 
 * 1 (10<sup>0</sup>) scene
 * 10 (10<sup>1</sup>) nodes
@@ -16,7 +16,7 @@
 * Each node may have a script, but each script can have no more than 100 lines
   * This includes comments and whitespace
   * The length is to encourage documentation
-* The total project size can be 1MB no larger in size
+* The total project size can be no larger than 1MB in size
   * This allows users to include textures, sounds, 3D models, etc
 
 Since this is a new project the rules are subject to modifications. We are still determining the legality of if the following:
