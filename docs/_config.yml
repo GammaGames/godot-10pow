@@ -1,28 +1,20 @@
-# Site specific settings
-title: "Title to this website"
-name: "Website name"
-keywords: "Key, words, about, this, website"
-baseurl: "/darcli"
-url: "http://website.com"
-description: "Website description"
-cover: "/assets/img/cover.svg"
-fanpage_id: ""
+# ----------- CONFIGURABLE START -----------
+title:            "Godot 10pos"
+description:      "Coding challenge"
+url:              https://www.gammagames.net/godot-10pow # Site url, without a slash at the end.
+signoff:          "Jesse" # Your name
+share:            false # Turn on twitter and facebook share buttons
 
-# Site general settings
-lang: "en"
-lang_alternate: "pt_BR"
-ssl: false # It will redirect to https
+links:
+  - name:         Posts
+    url:          /
+    external:     false
+  - name:         About me
+    url:          /about
+    external:     false
+# ------------ CONFIGURABLE END ------------
 
-# Media
-# Just the shortname:
-# facebook: lampiaosec # Rigth
-# facebook: facebook.com/lampiaosec # Wrong
-disqus: test
-twitter: 
-facebook: 
-github: 
-google:
-
-# Build settings
-markdown: kramdown
-permalink: /:categories/:title/
+permalink:        /posts/:title
+defaults:
+  - values:
+      layout: "default"
