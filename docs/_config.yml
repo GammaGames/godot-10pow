@@ -1,7 +1,7 @@
 # ----------- CONFIGURABLE START -----------
 title:            "Godot 10pos"
 description:      "Coding challenge"
-url:              https://www.gammagames.net/godot-10pow # Site url, without a slash at the end.
+url:              https://www.10pow.io # Site url, without a slash at the end.
 signoff:          "Jesse" # Your name
 share:            false # Turn on twitter and facebook share buttons
 
