@@ -1,6 +1,6 @@
 # godot-10pow
 
-[10pow.io](10pow.io)
+[10pow.io](https://10pow.io)
 
 * 1 (10<sup>0</sup>) scene
 * 10 (10<sup>1</sup>) nodes
