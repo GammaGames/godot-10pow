@@ -1,6 +1,6 @@
 # godot-10pow
 
-<sub>Challenge idea from [/u/thismarty](https://www.reddit.com/r/godot/comments/b90if7/a_godot_10liners_contest/ek2u8n7?utm_source=share&utm_medium=web2x) and [/u/MrMaidx](https://www.reddit.com/r/godot/comments/b90if7/a_godot_10liners_contest/ek3f9sf?utm_source=share&utm_medium=web2x)</sub>
+10pow.io
 
 * 1 (10<sup>0</sup>) scene
 * 10 (10<sup>1</sup>) nodes
