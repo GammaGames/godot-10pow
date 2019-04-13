@@ -24,6 +24,10 @@ config/name="Breakout 10pow"
 run/main_scene="res://Main.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+Helper="*res://Assets/Scripts/Helper.gd"
+
 [display]
 
 window/size/width=320

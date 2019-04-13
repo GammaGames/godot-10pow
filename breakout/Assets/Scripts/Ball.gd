@@ -9,11 +9,17 @@ export var held : bool = true
 
 func _ready():
     add_to_group("ball")
+    add_child(Helper.get_sprite("Assets/Sprites/ball.png"))
     connect("body_entered", self, "_on_body_entered")
+    $VisibilityNotifier2D.connect("screen_exited", self, "_on_screen_exited")
 
 func _on_body_entered(body):
     if body.has_method("break"):
         body.break()
+
+func _on_screen_exited():
+    get_tree().reload_current_scene()
+
 
 func _input(event):
     if Input.is_action_just_pressed("ui_accept"):
@@ -27,8 +33,4 @@ func _process(delta):
         apply_impulse(linear_velocity.normalized(), linear_velocity.normalized() * -1 * delta)
 
 func _physics_process(delta):
-    var pos = global_position
-    if pos.x < 0 or pos.x > viewport_size.x or pos.y < 0 or pos.y > viewport_size.y + 16:
-        get_tree().reload_current_scene()
-    else:
-        set_axis_velocity(linear_velocity.normalized() * (velocity + OS.get_ticks_msec() / 1000))
+    set_axis_velocity(linear_velocity.normalized() * (velocity + OS.get_ticks_msec() / 1000))

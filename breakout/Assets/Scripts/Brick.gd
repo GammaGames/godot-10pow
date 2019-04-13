@@ -3,17 +3,17 @@ class_name Brick
 
 signal broken
 
-onready var sprite = $Sprite
-
 export var breakable : bool = true
 
 func _ready():
     # TODO randomize brick texture
+    var sprite_path = ""
     if breakable:
         add_to_group("brick")
-        sprite.texture = load("res://Assets/Sprites/brick.png")
+        sprite_path = "Assets/Sprites/brick.png"
     else:
-        sprite.texture = load("res://Assets/Sprites/wall.png")
+        sprite_path = "Assets/Sprites/wall.png"
+    add_child(Helper.get_sprite(sprite_path))
 
 
 func break():

@@ -2,6 +2,9 @@ extends KinematicBody2D
 
 export var speed : int = 500
 
+func _ready():
+    add_child(Helper.get_sprite("Assets/Sprites/paddle.png"))
+
 func _physics_process(delta):
     # for calculating our movement velocity
     var mouse_pos : Vector2 = get_viewport().get_mouse_position()
