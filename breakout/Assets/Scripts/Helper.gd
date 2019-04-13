@@ -15,7 +15,7 @@ func get_sprite(sprite_path):
         # Get a main if we need to
         get_main()
     var sprite = main.get_ref().get_node("BaseSprite").duplicate()
-    sprite.texture = load("res://{path}".format({"path": sprite_path}))
+    sprite.texture = load("res://{}".format([sprite_path], "{}"))
     return sprite
 
 func get_audio_stream(audio_path):
@@ -24,5 +24,5 @@ func get_audio_stream(audio_path):
         # Get a main if we need to
         get_main()
     var stream = main.get_ref().get_node("BaseAudioStream").duplicate()
-    stream.texture = load("res://{path}".format({"path": audio_path}))
+    stream.texture = load("res://{}".format([audio_path], "{}"))
     return stream
