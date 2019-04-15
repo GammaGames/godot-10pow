@@ -1,16 +1,22 @@
 extends RigidBody2D
 
 onready var paddle = $"../Paddle"
-onready var bounce_sound = Helper.get_audio_stream("Assets/Sounds/bounce.wav")
-onready var lose_sound = Helper.get_audio_stream("Assets/Sounds/lose.wav")
+onready var bounce_sound
+onready var lose_sound
 
 export var initial_velocity : Vector2 = Vector2(100, -250)
 export var velocity : float = 300
 export var held : bool = true
 
 func _ready():
-    add_to_group("ball")
-    add_child(Helper.get_sprite("Assets/Sprites/ball.png"))
+    var sprite = $"../BaseSprite".duplicate()
+    bounce_sound = $"../BaseAudioStream".duplicate()
+    lose_sound = $"../BaseAudioStream".duplicate()
+    sprite.texture = load("res://Assets/Sprites/ball.png")
+    bounce_sound.stream = load("res://Assets/Sounds/bounce.wav")
+    lose_sound.stream = load("res://Assets/Sounds/lose.wav")
+
+    add_child(sprite)
     add_child(bounce_sound)
     add_child(lose_sound)
     $VisibilityNotifier2D.connect("screen_exited", self, "_on_screen_exited")

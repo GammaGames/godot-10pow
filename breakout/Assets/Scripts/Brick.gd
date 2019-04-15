@@ -1,27 +1,25 @@
 extends StaticBody2D
 class_name Brick
 
-var boom_sound
-var bounce_sound
+var hit_sound
 
 onready var shape = $CollisionShape2D
 
 export var breakable : bool = true
 
 func _ready():
-    # TODO randomize brick texture
-    var sprite_path = ""
+    var sprite = $"../BaseSprite".duplicate()
+    hit_sound = $"../BaseAudioStream".duplicate()
     if breakable:
         add_to_group("brick")
-        sprite_path = "Assets/Sprites/brick.png"
-        boom_sound = Helper.get_audio_stream("Assets/Sounds/boom2.wav")
-        add_child(boom_sound)
-        boom_sound.connect("finished", self, "_on_finished")
+        sprite.texture = load("res://Assets/Sprites/brick.png")
+        hit_sound.stream = load("res://Assets/Sounds/boom.wav")
+        hit_sound.connect("finished", self, "_on_finished")
     else:
-        sprite_path = "Assets/Sprites/wall.png"
-        bounce_sound = Helper.get_audio_stream("Assets/Sounds/bounce.wav")
-        add_child(bounce_sound)
-    add_child(Helper.get_sprite(sprite_path))
+        sprite.texture = load("res://Assets/Sprites/wall.png")
+        hit_sound.stream = load("res://Assets/Sounds/bounce.wav")
+    add_child(sprite)
+    add_child(hit_sound)
 
 
 func _on_finished():
@@ -31,10 +29,8 @@ func _on_finished():
 
 
 func break():
+    hit_sound.play()
     if breakable:
-        visible = false
-        shape.disabled = true
-        boom_sound.play()
         remove_from_group("brick")
-    else:
-        bounce_sound.play()
+        visible = false
+        shape.call_deferred("set_disabled", true)

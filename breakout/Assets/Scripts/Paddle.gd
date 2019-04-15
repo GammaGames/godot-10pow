@@ -3,7 +3,9 @@ extends KinematicBody2D
 export var speed : int = 500
 
 func _ready():
-    add_child(Helper.get_sprite("Assets/Sprites/paddle.png"))
+    var sprite = $"../BaseSprite".duplicate()
+    sprite.texture = load("res://Assets/Sprites/paddle.png")
+    add_child(sprite)
 
 
 func _physics_process(delta):
