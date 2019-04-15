@@ -1,0 +1,25 @@
+# ----------- CONFIGURABLE START -----------
+title:            "Godot 10pow"
+description:      "Coding challenge"
+url:              https://www.10pow.io
+
+links:
+  - name:         About
+    url:          /
+  - name:         Rules
+    url:          /rules
+  - name:         Examples
+    url:          /examples
+  - name:         GitHub
+    url:          https://github.com/GammaGames/godot-10pow
+    external:     true
+
+# ------------ CONFIGURABLE END ------------
+
+permalink:        /examples/:title
+defaults:
+  - values:
+      layout: "default"
+      is_post: true
+      has_date: true
+      signoff: "Gamma"

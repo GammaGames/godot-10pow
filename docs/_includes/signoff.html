@@ -1,0 +1,6 @@
+<p class="mt4">
+  Til next time,<br>
+  {{ page.signoff }}
+  <span class="silver">{{ page.date | date: "at %-I:%M %P" }}</span>
+</p>
+<img src="{{ site.url }}/assets/img/{{page.signoff | downcase}}.png" alt="{{page.signoff | downcase}}" />
