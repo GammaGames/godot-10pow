@@ -8,8 +8,10 @@ onready var shape = $CollisionShape2D
 export var breakable : bool = true
 
 func _ready():
+    # Duplicate our base nodes
     var sprite = $"../BaseSprite".duplicate()
     hit_sound = $"../BaseAudioStream".duplicate()
+    # Set our base node resources
     if breakable:
         add_to_group("brick")
         sprite.texture = load("res://Assets/Sprites/brick.png")
@@ -18,6 +20,7 @@ func _ready():
     else:
         sprite.texture = load("res://Assets/Sprites/wall.png")
         hit_sound.stream = load("res://Assets/Sounds/bounce.wav")
+    # Add our base nodes
     add_child(sprite)
     add_child(hit_sound)
 

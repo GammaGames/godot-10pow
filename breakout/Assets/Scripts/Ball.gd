@@ -9,13 +9,16 @@ export var velocity : float = 300
 export var held : bool = true
 
 func _ready():
+    # Duplicate our base nodes
     var sprite = $"../BaseSprite".duplicate()
     bounce_sound = $"../BaseAudioStream".duplicate()
     lose_sound = $"../BaseAudioStream".duplicate()
+    # Set our base node resources
     sprite.texture = load("res://Assets/Sprites/ball.png")
     bounce_sound.stream = load("res://Assets/Sounds/bounce.wav")
     lose_sound.stream = load("res://Assets/Sounds/lose.wav")
 
+    # Add our base nodes and connect signals
     add_child(sprite)
     add_child(bounce_sound)
     add_child(lose_sound)

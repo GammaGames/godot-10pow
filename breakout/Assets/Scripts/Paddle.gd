@@ -3,6 +3,7 @@ extends KinematicBody2D
 export var speed : int = 500
 
 func _ready():
+    # Duplicate our base node and add itgri
     var sprite = $"../BaseSprite".duplicate()
     sprite.texture = load("res://Assets/Sprites/paddle.png")
     add_child(sprite)
