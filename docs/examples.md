@@ -1,8 +1,11 @@
 ---
+title: Examples
 previous:
     url: /rules
 signoff: false
 ---
+
+This is a list of projects that fit the rules. If you would like to have your project added here, please either submit a [pull request](https://github.com/GammaGames/godot-10pow/pulls) or an [issue](https://github.com/GammaGames/godot-10pow/issues/new) on the git repo.
 
 <ul class="list pa0">
   {% for post in site.posts %}
