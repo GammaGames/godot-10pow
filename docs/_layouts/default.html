@@ -15,17 +15,10 @@
     <div class="mw7 bg-white mt4 mb3 center br2-ns bt bb ba-ns b--light-gray">
       <nav class="bb b--light-gray pv4 tc" aria-label="Main">
         {% for link in site.links %}
-          {% if page.url == link.url %}
-            <a class="link blue highlight hover-mid-gray mh2 pv1"
+            <a class="link blue {% if page.url == link.url %}highlight{%endif%} hover-mid-gray mh2 pv1"
                 href="{% unless link.external %}{{ site.url }}{% endunless %}{{ link.url }}">
                 {{ link.name }}
             </a>
-          {% else %}
-            <a class="link blue hover-mid-gray mh2 pv1"
-                href="{% unless link.external %}{{ site.url }}{% endunless %}{{ link.url }}">
-                {{ link.name }}
-            </a>
-          {% endif %}
         {% endfor %}
       </nav>
 
@@ -54,6 +47,5 @@
   <footer class="mw7 center tc pt3 pb4 silver">
     <a class="link blue hover-mid-gray mh2 pv1" href="https://github.com/GammaGames"><i class="fab fa-github"></i></a>
     <a class="link blue hover-mid-gray mh2 pv1" href="https://twitter.com/GammaGames"><i class="fab fa-twitter"></i></a>
-    <a class="link blue hover-mid-gray mh2 pv1" href="https://www.reddit.com/user/GammaGames"><i class="fab fa-reddit"></i></a>
   </footer>
 </html>

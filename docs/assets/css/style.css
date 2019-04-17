@@ -1,12 +1,13 @@
 .bg-super-white { background: #f9f9f9; }
 .top-50 { top: 50% }
-.link:hover { background: url(/assets/img/line.png) repeat-x left bottom; }
-.link.highlight { background: url(/assets/img/line.png) repeat-x left bottom; }
 
 /* Markdown styles */
 .markdown-body a {
   text-decoration: none;
   color: #357edd;
+}
+a.highlight, a:not(.no-underline):hover {
+    box-shadow: 0 1px 0 #80808080;
 }
 .markdown-body .highlighter-rouge {
   padding: .25rem .5rem;
