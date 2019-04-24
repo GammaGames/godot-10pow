@@ -20,6 +20,7 @@ permalink:        /examples/:title
 defaults:
   - values:
       layout: "default"
+      hidden: false
       is_post: true
       has_date: true
       signoff: "Gamma"
