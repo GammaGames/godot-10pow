@@ -11,7 +11,7 @@ signoff: false
 The name comes from the limitations set in place:
 
 * 1 (10<sup>0</sup>) scene
-* 10 (10<sup>1</sup>) nodes
+* 10 (10<sup>1</sup>) nodes and scripts
 * 100 (10<sup>2</sup>) loc/script
 * 1000 (10<sup>3</sup>) KB max
 
